@@ -39,7 +39,7 @@ namespace team01
             direction = stick; //direction variable is set to stick input
             if (direction == target && (transform.position == runePoints[Mathf.Clamp(stepPos - 1, 0, 100)] || stepCount == 0)) //use Mathf.Clamp to ensure no index out-of-bounds errors
             {
-                if(stepCount < runeStepCounts[runeID])
+                if (stepCount < runeStepCounts[runeID])
                 {
                     stepPos++;
                     //stepPos = Mathf.Clamp(stepPos, 0, runePoints.Length); //clamp so it doesn't go out-of-bounds
@@ -56,6 +56,10 @@ namespace team01
             else if (transform.position != runePoints[Mathf.Clamp(stepPos - 1, 0, 100)] && stepCount > 0)
             {
                 transform.position = Vector3.MoveTowards(transform.position, runePoints[Mathf.Clamp(stepPos - 1, 0, 100)], cursorSpeed * Time.deltaTime);
+            }
+            else if (stepCount == runeStepCounts[runeID] && direction == Vector2.zero)
+            {
+                getNewRune(false); //gets a new random rune - this will be changed to get the next rune in a random sequence
             }
         }
 

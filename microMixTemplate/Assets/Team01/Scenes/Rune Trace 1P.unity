@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &37431377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -838,7 +838,7 @@ Transform:
   m_GameObject: {fileID: 518811901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.72, y: 1.48, z: 0}
+  m_LocalPosition: {x: -0.87, y: -1.53, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -950,7 +950,7 @@ MonoBehaviour:
   - {x: 1, y: 1}
   - {x: 0, y: 0}
   stepPos: 0
-  runeID: 0
+  runeID: 7
   cursorSpeed: 10
 --- !u!1 &623778245
 GameObject:
@@ -1196,7 +1196,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1028521452
 SpriteRenderer:
   m_ObjectHideFlags: 0
