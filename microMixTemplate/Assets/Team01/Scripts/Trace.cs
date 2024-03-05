@@ -10,19 +10,21 @@ namespace team01
 
         public Vector3[] runeStarts = new Vector3[10]; //tracks start points as a Vector3, i.e. where to place the pointer when a new rune loads
         public int[] runeStepCounts = new int[10]; //tracks number of steps needed to complete the rune
-        public Vector3[] runePoints = new Vector3[38]; //tracks vertices of each rune, i.e. where the pointer targets at each step
-        public Vector2[] runeStepInputs = new Vector2[38]; //stores inputs required to complete each rune, in terms of joystick values
+        public Vector3[] runePoints = new Vector3[39]; //tracks vertices of each rune, i.e. where the pointer targets at each step - 1 more than necessary
+        public Vector2[] runeStepInputs = new Vector2[39]; //stores inputs required to complete each rune, in terms of joystick values - 1 more than necessary
         public int stepPos; //tracks step position based on rune ID #, previous steps taken, etc.
-        int stepCount; //tracks current steps taken to compare against current rune's total step count
+        int stepCount = 0; //tracks current steps taken to compare against current rune's total step count
 
         public int runeID = 0; //public for testing purposes
 
         Vector2 direction;
         Vector2 target;
+        public float cursorSpeed = 1f;
         // Start is called before the first frame update
         void Start()
         {
             //getStepPosition(runeID);
+            getNewRune(false); //replace this with hiding cursor on Start, then show cursor OnGameStart
         }
         protected override void OnGameStart()
         {
@@ -35,12 +37,14 @@ namespace team01
         void Update()
         {
             direction = stick; //direction variable is set to stick input
-            if(direction == target)
+            if (direction == target && (transform.position == runePoints[Mathf.Clamp(stepPos - 1, 0, 100)] || stepCount == 0)) //use Mathf.Clamp to ensure no index out-of-bounds errors
             {
                 if(stepCount < runeStepCounts[runeID])
                 {
                     stepPos++;
+                    //stepPos = Mathf.Clamp(stepPos, 0, runePoints.Length); //clamp so it doesn't go out-of-bounds
                     stepCount++; //update actual and virtual step position
+                    target = runeStepInputs[stepPos];
                 } 
                 else
                 {
@@ -48,6 +52,10 @@ namespace team01
                 }
                 
 
+            }
+            else if (transform.position != runePoints[Mathf.Clamp(stepPos - 1, 0, 100)] && stepCount > 0)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, runePoints[Mathf.Clamp(stepPos - 1, 0, 100)], cursorSpeed * Time.deltaTime);
             }
         }
 
