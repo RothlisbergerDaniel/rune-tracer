@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22f1351b8e87f74a8141d5d4f52dfaf, type: 3}
+  m_Name: GameSelected
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 1f694189623c0c940bb7e0615a52178d, type: 3}
+  - {fileID: 8300000, guid: 7a63fd8bc1035b140925e7326c6c4d95, type: 3}
+  - {fileID: 8300000, guid: 45dc60933bead694ba414a0483be98c1, type: 3}
+  - {fileID: 8300000, guid: db585df3095827d4595b610a73906c06, type: 3}
+  - {fileID: 8300000, guid: 5d38420e5c9de774c88b01eb440fed69, type: 3}
+  - {fileID: 8300000, guid: 16d2fc005b95eca438aaafcfd722656b, type: 3}
+  - {fileID: 8300000, guid: 2ab0672279f7e7741a40d1924a2b6003, type: 3}
+  - {fileID: 8300000, guid: c584e123cbcf5864a971bdffa18eaa55, type: 3}

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Tag0
+  - Tag1
+  - Tag2
+  - Tag3
+  - Tag4
+  - Tag5
+  - Tag6
+  - Tag7
+  - Tag8
+  - Tag9
+  - Tag10
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Detect Player
+  - Water
+  - UI
+  - Player Self-Interact
+  - Player No Self-Interact
+  - Detect Hazard
+  - Hazard Self-Interact
+  - Hazard No Self-Interact
+  - Detect Bonus
+  - Bonus Self-Interact
+  - Bonus No Self-Interact
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

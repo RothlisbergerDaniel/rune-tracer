@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 215c0a3083387424a8dcb97178a23b5e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _p1Controls: {instanceID: 0}
+  - _p2Controls: {instanceID: 0}
+  - _promptPrefab: {instanceID: 0}
+  - _joystickPrefab: {fileID: 3319039471846349024, guid: 01135306082267f448ad1e75ad5d50cc, type: 3}
+  - _buttonPrefab: {fileID: 5851453209655730996, guid: 43146bf902c4d884899f1d1a1452489e, type: 3}
+  - _buttonHoldPrefab: {fileID: 4151918225886211038, guid: 8ec7c36c0813ac1449558928385f5520, type: 3}
+  - _buttonMashPrefab: {fileID: 3631746356959067918, guid: 066bf3ee0a6745c449b70eee36bf9481, type: 3}
+  - _overlayCW: {fileID: -1439913470, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayCCW: {fileID: 419531136, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayHorizontal: {fileID: 1840080500, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayVertical: {fileID: 885445609, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayAllDirections: {fileID: -133842155, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayLeft: {fileID: -1585394382, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayRight: {fileID: 1894568359, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayUp: {fileID: 1706936553, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _overlayDown: {fileID: 1296815558, guid: a1590ae4950a9454689989e373828245, type: 3}
+  - _plus: {fileID: -939030800, guid: a1590ae4950a9454689989e373828245, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

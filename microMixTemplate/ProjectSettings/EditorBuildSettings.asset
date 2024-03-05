@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/microMix.unity
+    guid: a0b9a72b595a35a448f006f8b0716783
+  - enabled: 1
+    path: Assets/Examples/Team99/Fansy Food Fight/Scenes/Fansy Food Fight.unity
+    guid: fa5a9918c77ac9a4b89e4c63da86648c
+  - enabled: 1
+    path: Assets/Examples/Team99/Tooth Rush/Scenes/Tooth Rush - 1P.unity
+    guid: f287f7f44738d2d4c8dce99a6f5f5420
+  - enabled: 1
+    path: Assets/Examples/Team99/Tooth Rush/Scenes/Tooth Rush - 2P.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 28bfde271760c454b943706b4892c800, type: 2}

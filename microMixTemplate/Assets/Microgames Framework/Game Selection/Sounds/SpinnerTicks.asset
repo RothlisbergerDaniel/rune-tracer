@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22f1351b8e87f74a8141d5d4f52dfaf, type: 3}
+  m_Name: SpinnerTicks
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 5ef8a048b9d597e40ba84ea9bc64b58f, type: 3}
+  - {fileID: 8300000, guid: b7580cda86f32d84d86cae27b5c516a8, type: 3}
+  - {fileID: 8300000, guid: 12d936495c59bd24aa1ad65d8c0422d4, type: 3}

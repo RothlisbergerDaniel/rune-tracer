@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24fbde2c24ab1544bd81b52842e8ec5, type: 3}
+  m_Name: ToothRush
+  m_EditorClassIdentifier: 
+  includeInRandomizer: 1
+  teamNumber: 0
+  gameTitle: Tooth Rush
+  gameIcon: {fileID: 21300000, guid: 3cffd0cfc92fede4090a993c3cd9ecae, type: 3}
+  prompt: Brush
+  singlePlayerScene: {fileID: 102900000, guid: f287f7f44738d2d4c8dce99a6f5f5420, type: 3}
+  twoPlayerScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  controls:
+  - label: Brush
+    primary: 100
+    joiner: 0
+    secondary: 1
+  rightPlayerAltControls: []
+  singlePlayerScenePath: Assets/Examples/Team99/Tooth Rush/Scenes/Tooth Rush - 1P.unity
+  twoPlayerScenePath: Assets/Examples/Team99/Tooth Rush/Scenes/Tooth Rush - 2P.unity
+  postgameMessages:
+  - You can't handle the tooth.
+  - Brushing your teeth is the only time you clean your skeleton.
+  - I buy teeth. - The Tooth Fairy
+  bannerImage: {fileID: 21300000, guid: 69d69ff9d7bdec543bbd2174fc1aa521, type: 3}
+  developerCredits:
+  - Nicolas Hesler
+  licensedWorksCredits:
+  - titleOfWork: Sun rays vector, sunburst on blue color background
+    creator: nicescene
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/sun-rays-vector-sunburst-on-blue-color-background/114666630
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: Sparkle star icons. Shine icons. Stars sparkles vector
+    creator: OpenDesigner
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/sparkle-star-icons-shine-icons-stars-sparkles-vector/450508882
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: Break Room Breakdown
+    creator: Joseph Rusnak
+    source: Westar Music
+    url: https://westarmusic.sourceaudio.com/track/23795362
+    licence: Non-commercial educational
+  - titleOfWork: Cute tooth characters in flat style
+    creator: Idol Design
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/cute-tooth-characters-in-flat-style-step-of-cleaning-teeth-stains-from-unhealthy-teeth-to-healthy-teeth/329853158
+      https://stock.adobe.com/ca/images/set-cute-tooth-characters-in-flat-style-dental-collection-brushing-plaque-caries-hole-cleaning-stains-and-healthy-teeth/329853232
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: Set of several toothbrush flat ilustrations. Products for oral hygiene.
+    creator: Dejan Jovanovic
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/set-of-several-toothbrush-flat-ilustrations-products-for-oral-hygiene/251436027
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: SWOOSH, 8 VERSIONS
+    creator: 
+    source: Sound Ideas
+    url: https://soundideas.sourceaudio.com/track/41255125
+    licence: Non-commercial educational
+  - titleOfWork: Doodle mouth
+    creator: Tartila
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/doodle-mouth-funny-cartoon-pop-art-smile-anger-and-scary-face-expression-with-teeth-and-tongue-vector-cute-hand-drawn-isolated-mouths-set/509779075
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: cartoon mouth icon
+    creator: icon0
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/cartoon-mouth-icon/145580232
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: 'Flat tooth icon. Dental treatment symbol. Dentist logotype template '
+    creator: Marina
+    source: Adobe Stock
+    url: 'https://stock.adobe.com/ca/images/flat-tooth-icon-dental-treatment-symbol-dentist-logotype-template/304663958 '
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: Set cute tooth characters in flat style. dental collection - brushing,
+      plaque, caries hole, cleaning, stains and healthy teeth.
+    creator: Idol Design
+    source: Adobe Stock
+    url: https://stock.adobe.com/ca/images/set-cute-tooth-characters-in-flat-style-dental-collection-brushing-plaque-caries-hole-cleaning-stains-and-healthy-teeth/329853232
+    licence: Adobe Stock Educational Licence
+  - titleOfWork: Human, Brush Teeth
+    creator: Hollywood Edge
+    source: Sound Ideas
+    url: https://soundideas.sourceaudio.com/track/11498487
+    licence: Non-commercial educational
+  - titleOfWork: Reaction, Crowd
+    creator: 
+    source: Sound Ideas
+    url: https://soundideas.sourceaudio.com/track/7588547
+    licence: Non-commercial educational
+  - titleOfWork: Cellular Sparkle Bell
+    creator: 
+    source: Sound Ideas
+    url: https://soundideas.sourceaudio.com/track/37966920
+    licence: Non-commercial educational
