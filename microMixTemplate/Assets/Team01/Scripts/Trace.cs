@@ -37,7 +37,8 @@ namespace team01
         void Update()
         {
             direction = stick; //direction variable is set to stick input
-            if (direction == target && (transform.position == runePoints[Mathf.Clamp(stepPos - 1, 0, 100)] || stepCount == 0)) //use Mathf.Clamp to ensure no index out-of-bounds errors
+            Vector3 currentPoint = new Vector3 (runePoints[Mathf.Clamp(stepPos - 1, 0, 100)][0] - 0f, runePoints[Mathf.Clamp(stepPos - 1, 0, 100)][1] - 1.5f, 0f); //convert preset point to new position, scalabale to 2P
+            if (direction == target && (transform.position == currentPoint || stepCount == 0)) //use Mathf.Clamp to ensure no index out-of-bounds errors
             {
                 if (stepCount < runeStepCounts[runeID])
                 {
@@ -53,9 +54,9 @@ namespace team01
                 
 
             }
-            else if (transform.position != runePoints[Mathf.Clamp(stepPos - 1, 0, 100)] && stepCount > 0)
+            else if (transform.position != currentPoint && stepCount > 0)
             {
-                transform.position = Vector3.MoveTowards(transform.position, runePoints[Mathf.Clamp(stepPos - 1, 0, 100)], cursorSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, currentPoint, cursorSpeed * Time.deltaTime);
             }
             else if (stepCount == runeStepCounts[runeID] && direction == Vector2.zero)
             {
@@ -82,7 +83,7 @@ namespace team01
             }
             stepCount = 0; //reset step count
             getStepPosition(runeID); //get actual step position
-            transform.position = runeStarts[runeID]; //reset cursor transform
+            transform.position = new Vector3 (runeStarts[runeID][0] - 0f, runeStarts[runeID][1] - 1.5f, 0f); //reset cursor transform, adjusting for new position
             target = runeStepInputs[stepPos]; //set first target direction for new rune
         }
     }

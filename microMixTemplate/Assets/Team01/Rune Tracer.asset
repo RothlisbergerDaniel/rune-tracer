@@ -20,8 +20,12 @@ MonoBehaviour:
   singlePlayerScene: {fileID: 102900000, guid: 5ca1559dd938e084a86933d71c7224f0, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
-  - label: 
+  - label: Trace
     primary: 124
+    joiner: 0
+    secondary: 0
+  - label: Recenter
+    primary: 4
     joiner: 0
     secondary: 0
   rightPlayerAltControls: []
