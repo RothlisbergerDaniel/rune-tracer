@@ -27,7 +27,7 @@ namespace team01
         public int[] runeDifficulties = new int[10]; //list of rune difficulties by ID in order from low to high
         public int[] runeTypes; //list of rune types
         public int maxCount; //max number of runes to complete
-        int currentRune; //current rune in sequence
+        public int currentRune; //current rune in sequence
         
         // Start is called before the first frame update
         void Start()
@@ -117,6 +117,7 @@ namespace team01
             if(!onFirstLoad) //prevent errors by not updating on first load
             {
                 linkedRune.SendMessage("updateSprite", runeID);
+                linkedRune.GetComponent<Rune>().id = -1;
             }
         }
 
@@ -144,6 +145,7 @@ namespace team01
                 currentRuneItem = Instantiate(lineupRune, new Vector3(-2.25f + (i * 0.5f), -4.5f, 0f), Quaternion.identity); //instantiate runes at positions 0.5x apart from each other
                 currentRuneItem.GetComponent<Rune>().id = i;   //get the script and set id
                 currentRuneItem.GetComponent<Rune>().type = runeTypes[i]; //as well as rune type
+                currentRuneItem.GetComponent<Rune>().controller = gameObject;
                 //currentRuneItem.SendMessage("updateSprite", i, SendMessageOptions.DontRequireReceiver); //uncomment this to throw an error :skull:
             }
             currentRune = 0; //reset current rune
