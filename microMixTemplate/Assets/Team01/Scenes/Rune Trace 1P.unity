@@ -535,6 +535,7 @@ MonoBehaviour:
   lineupRune: {fileID: 4936824169111960946, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
   cursorSpeed: 10
   runeDifficulties: 00000000020000000300000009000000010000000500000007000000080000000400000007000000
+  runeTypes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   maxCount: 10
 --- !u!1 &961739749
 GameObject:
@@ -883,67 +884,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &5134901507592376722
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3982769109886976476, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4400662150528200852, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936824169111960946, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
-      propertyPath: m_Name
-      value: Lineup
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 53549b6ba4b5f7c49b500750e084f643, type: 3}
 --- !u!4 &5561221274462868952
 Transform:
   m_ObjectHideFlags: 0
@@ -996,4 +936,3 @@ SceneRoots:
   - {fileID: 1716889994}
   - {fileID: 518811903}
   - {fileID: 5561221274462868952}
-  - {fileID: 5134901507592376722}
