@@ -16,6 +16,7 @@ namespace team01
         int stepCount = 0; //tracks current steps taken to compare against current rune's total step count
 
         public int runeID = 0; //public for testing purposes
+        public GameObject linkedRune;
 
         Vector2 direction;
         Vector2 target;
@@ -49,7 +50,7 @@ namespace team01
                 } 
                 else
                 {
-                    getNewRune(false); //gets a new random rune - this will be changed to get the next rune in a random sequence
+                    getNewRune(true); //gets a new random rune - this will be changed to get the next rune in a random sequence
                 }
                 
 
@@ -60,7 +61,7 @@ namespace team01
             }
             else if (stepCount == runeStepCounts[runeID] && direction == Vector2.zero)
             {
-                getNewRune(false); //gets a new random rune - this will be changed to get the next rune in a random sequence
+                getNewRune(true); //gets a new random rune - this will be changed to get the next rune in a random sequence
             }
         }
 
@@ -85,6 +86,7 @@ namespace team01
             getStepPosition(runeID); //get actual step position
             transform.position = new Vector3 (runeStarts[runeID][0] - 0f, runeStarts[runeID][1] - 1.5f, 0f); //reset cursor transform, adjusting for new position
             target = runeStepInputs[stepPos]; //set first target direction for new rune
+            linkedRune.SendMessage("updateSprite", runeID);
         }
     }
 }    
