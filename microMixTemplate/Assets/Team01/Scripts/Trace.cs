@@ -54,9 +54,10 @@ namespace team01
         // Update is called once per frame
         void Update()
         {
+            
             direction = stick; //direction variable is set to stick input
             Vector3 currentPoint = new Vector3(runePoints[Mathf.Clamp(stepPos - 1, 0, 100)][0] - 0f, runePoints[Mathf.Clamp(stepPos - 1, 0, 100)][1] - 1.5f, 0f); //convert preset point to new position, scalabale to 2P
-            if (direction == target && (transform.position == currentPoint || stepCount == 0)) //use Mathf.Clamp to ensure no index out-of-bounds errors
+            if ((target[0] == 0 && direction[1] == target[1] || target[1] == 0 && direction[0] == target[0]) && (transform.position == currentPoint || stepCount == 0)) //use Mathf.Clamp to ensure no index out-of-bounds errors
             {
                 if (stepCount < runeStepCounts[runeID])
                 {
