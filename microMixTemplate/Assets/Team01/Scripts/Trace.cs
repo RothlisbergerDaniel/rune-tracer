@@ -31,10 +31,13 @@ namespace team01
         public int maxCount; //max number of runes to complete
         public int currentRune; //current rune in sequence
         bool gameCompleted; //checks whether the game is completed or not
+
+        TrailRenderer tr;
         
         // Start is called before the first frame update
         void Start()
         {
+            tr = GetComponent<TrailRenderer>();
             //getStepPosition(runeID);
             runeTypes = new int[10]; //refresh rune type list
             getLineup(); //get new rune lineup
@@ -117,6 +120,7 @@ namespace team01
             stepCount = 0; //reset step count
             getStepPosition(runeID); //get actual step position
             transform.position = new Vector3(runeStarts[runeID][0] - 0f, runeStarts[runeID][1] - 1.5f, 0f); //reset cursor transform, adjusting for new position
+            tr.Clear();
             target = runeStepInputs[stepPos]; //set first target direction for new rune
             linkedRune.GetComponent<Rune>().type = runeID; //sets linked rune's type
             if(!onFirstLoad) //prevent errors by not updating on first load
