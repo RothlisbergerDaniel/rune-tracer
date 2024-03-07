@@ -757,13 +757,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537604545}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4af0e41f74e89a243b94ec08b62f6973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeSprites: []
-  litSprites: []
+  runeSprites:
+  - {fileID: 21300000, guid: 4c07daffcd34d694aa37e6b8beb5e5f1, type: 3}
+  - {fileID: 21300000, guid: e073a873f22d0064586b744a3df862b6, type: 3}
+  - {fileID: 21300000, guid: c87ff9ea6c30be54aa11bba280db3941, type: 3}
+  - {fileID: 21300000, guid: 7547180501d62864ebc8c1f14436954b, type: 3}
+  - {fileID: 21300000, guid: f59ad898272a9df4493e917ed58b1bd1, type: 3}
+  - {fileID: 21300000, guid: 67f1de50079f14145ac53ca70fe16337, type: 3}
+  - {fileID: 21300000, guid: 69d605394fae4c64490136c8ea37fbe2, type: 3}
+  - {fileID: 21300000, guid: fc5bf4f388febf4468ee220858a095bf, type: 3}
+  - {fileID: 21300000, guid: dd584ddfedb9a9c42b662dfde841e2bf, type: 3}
+  - {fileID: 21300000, guid: 0fd30b3b2450ad34c9a4b86a4f06daa3, type: 3}
+  litSprites:
+  - {fileID: 21300000, guid: 9310a25feeb1458438f72a1600a5ebb1, type: 3}
+  - {fileID: 21300000, guid: 7ab5142e700638b419141139fa7897ce, type: 3}
+  - {fileID: 21300000, guid: 6875e50825627ff40a376944e4aa6b46, type: 3}
+  - {fileID: 21300000, guid: 1c2ad4d9b1ca14f42989e1b4b58480e9, type: 3}
+  - {fileID: 21300000, guid: 831b435f7e9c20a489ed0607aaa4509a, type: 3}
+  - {fileID: 21300000, guid: db451fa1afc772546abf5461ac23b408, type: 3}
+  - {fileID: 21300000, guid: aae00581a71f16f4fb0e61bb4ddf736e, type: 3}
+  - {fileID: 21300000, guid: a19327b667fb9f84d9537988218ae9eb, type: 3}
+  - {fileID: 21300000, guid: 0be1881b65fbf744885e0e83d628ed49, type: 3}
+  - {fileID: 21300000, guid: 4067228b958c9f543bd9609fad7eb69b, type: 3}
   id: 0
   type: 0
   controller: {fileID: 518811901}
