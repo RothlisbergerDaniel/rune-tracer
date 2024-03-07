@@ -39,6 +39,18 @@ namespace team01
         public AudioSource win;  //and win sfx
         public AudioSource runeComplete; //rune completion sfx
         public AudioSource bgm; //background music
+
+        public GameObject portal; //portal for animation
+        SpriteRenderer srPortal;  //portal SpriteRenderer
+        Animator animPortal;
+
+        public GameObject lightning1; //lightning gameObjects
+        ParticleSystem psLightning1;  //and particle systems
+        public GameObject lightning2;
+        ParticleSystem psLightning2;
+
+        public GameObject burst;  //burst gameObject
+        ParticleSystem psBurst; //and particle system
         
         // Start is called before the first frame update
         void Start()
@@ -49,6 +61,16 @@ namespace team01
             getLineup(); //get new rune lineup
             getNewRune(runeTypes[currentRune], true); //replace this with hiding cursor on Start, then show cursor OnGameStart?
             gameCompleted = false; //make sure the game can be completed
+
+            srPortal = portal.GetComponent<SpriteRenderer>();
+            srPortal.enabled = false; //get and disable portal SpriteRenderer
+            animPortal = portal.GetComponent<Animator>();
+            //animPortal.SetBool("Open", false); //get and disable animation
+            animPortal.ResetTrigger("End");
+
+            psLightning1 = lightning1.GetComponent<ParticleSystem>();
+            psLightning2 = lightning2.GetComponent<ParticleSystem>();
+            psBurst = burst.GetComponent<ParticleSystem>();
         }
         protected override void OnGameStart()
         {
@@ -81,12 +103,18 @@ namespace team01
                     {
                         getNewRune(runeTypes[currentRune], false); //gets the next rune in the sequence
                         runeComplete.Play();
+                        psBurst.Play();
                     }
                     else if (!gameCompleted)
                     {
                         gameCompleted = true;
                         ReportGameCompletedEarly(); //end game if all runes are completed early
                         win.Play();
+                        srPortal.enabled = true;
+                        //animPortal.SetBool("Open", true);
+                        animPortal.SetTrigger("End");
+                        
+                        tr.Clear();
                     }
                 }
                 
@@ -103,13 +131,18 @@ namespace team01
                 {
                     getNewRune(runeTypes[currentRune], false);
                     runeComplete.Play();
+                    psBurst.Play();
                 }
                 else if (!gameCompleted)
                 {
                     gameCompleted = true;       //prevent game from continually reporting early completion
                     ReportGameCompletedEarly(); //then report early completion
                     win.Play();
-                    //put win feedback here
+                    srPortal.enabled = true;
+                    //animPortal.SetBool("Open", true); //send win feedback
+                    animPortal.SetTrigger("End");
+
+                    tr.Clear();
                 }
             }
         }
@@ -177,6 +210,8 @@ namespace team01
         {
             base.OnTimesUp();
             lose.Play();
+            psLightning1.Play();
+            psLightning2.Play();
         }
     }
 }    
