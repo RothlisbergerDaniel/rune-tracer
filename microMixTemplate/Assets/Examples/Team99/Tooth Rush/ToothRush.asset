@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: ToothRush
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 99
   gameTitle: Tooth Rush
   gameIcon: {fileID: 21300000, guid: 3cffd0cfc92fede4090a993c3cd9ecae, type: 3}
-  prompt: Brush
+  announcerText: Brush
+  announcerAudioFile: Brush
+  _announcerAudio: {fileID: 8300000, guid: 54be7f73356a7ab428e3e484cc959cc5, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: f287f7f44738d2d4c8dce99a6f5f5420, type: 3}
   twoPlayerScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
   controls:

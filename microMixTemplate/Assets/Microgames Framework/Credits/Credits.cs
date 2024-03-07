@@ -56,6 +56,13 @@ public class Credits : MonoBehaviour
 
             header.image.sprite = info.bannerImage;
             header.title.text = info.gameTitle;
+            if (info.teamNumber > 90) {
+                header.team.text = $"Faculty";                
+            } else if (info.teamNumber > 0) {
+                header.team.text = $"Team {info.teamNumber}";
+            } else {
+                header.team.gameObject.SetActive(false);
+            }
 
             var devs = info.developerCredits;
             Array.Sort(devs);

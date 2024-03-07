@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: FansyFoodFight
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 99
   gameTitle: Fansy Food Fight
   gameIcon: {fileID: 21300000, guid: 316dd2a4b927f5d46964b2f15499f38e, type: 3}
-  prompt: Spin
+  announcerText: Spin
+  announcerAudioFile: Spin
+  _announcerAudio: {fileID: 8300000, guid: 64f1617f37c12c641af8537eba0938e9, type: 3}
   singlePlayerScene: {fileID: 0}
   twoPlayerScene: {fileID: 102900000, guid: fa5a9918c77ac9a4b89e4c63da86648c, type: 3}
   controls:

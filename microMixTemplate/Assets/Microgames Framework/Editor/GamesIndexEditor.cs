@@ -16,28 +16,34 @@ public class GamesIndexEditor : Editor {
     static readonly Regex _teamFolderMatch = new Regex(@"Team[^\d\\/]*(\d+)[^\d\\/]*$", RegexOptions.Compiled);
     static string _importInfo;
 
-    #pragma warning disable CS0414 // Turn off warning in Monday version.
+    //#pragma warning disable CS0414 // Turn off warning in Monday version.
     static EditorCoroutine _importInProgress;
-    #pragma warning restore CS0414
+    //#pragma warning restore CS0414
     public override void OnInspectorGUI()
     {
         var index = (GamesIndex)target;
 
         if (GUILayout.Button("Refresh Local Games"))
             RefreshLocal(index);
+        
 
-        /*
-        if (_importInProgress == null) {
-            if (GUILayout.Button("Import Games")) {
-                _importInProgress = EditorCoroutineUtility.StartCoroutine(ImportCoroutine(index), this);
-            }
-        } else {
-            if (GUILayout.Button($"Importing {_importInfo} (Abort)")) {
-                EditorCoroutineUtility.StopCoroutine(_importInProgress);
-                _importInProgress = null;
-            }
-        }  
-        */      
+        if (index.enableImport) {
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("_sourcePath"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("_destinationPath"));
+
+            if (_importInProgress == null) {
+                if (GUILayout.Button("Import Games")) {
+                    _importInProgress = EditorCoroutineUtility.StartCoroutine(ImportCoroutine(index), this);
+                }
+            } else {
+                if (GUILayout.Button($"Importing {_importInfo} (Abort)")) {
+                    EditorCoroutineUtility.StopCoroutine(_importInProgress);
+                    _importInProgress = null;
+                }
+            }   
+        }
+
+         
 
         DrawDefaultInspector();
     }
@@ -73,7 +79,7 @@ public class GamesIndexEditor : Editor {
         if (!IsSetupValid(index, true)) yield break;
 
         
-        if (CloseImportedScenes(index.destinationPath))
+        if (CloseImportedScenes(index.DestinationPath))
             yield return null;
 
         var buildScenes = EraseOldVersions(index);
@@ -81,13 +87,13 @@ public class GamesIndexEditor : Editor {
 
         // Copy data from all matching project folders into destination path.
         Dictionary<int, string> importMap = new();
-        var projects = Directory.GetDirectories(index.sourcePath);
+        var projects = Directory.GetDirectories(index.SourcePath);
         
         int copied = 0;
         foreach(var projectPath in projects) {   
             if (ValidateTeamFolder(projectPath, out int teamNumber)) {
                 yield return null;
-                if (TryCopy(projectPath, index.destinationPath, teamNumber, importMap)) {
+                if (TryCopy(projectPath, index.DestinationPath, teamNumber, importMap)) {
                     copied++;
                     _importInfo = $"{copied}/{projects.Length}";        
                 }    
@@ -113,24 +119,24 @@ public class GamesIndexEditor : Editor {
 
     bool IsSetupValid(GamesIndex index, bool readingSource) {       
 
-        if (string.IsNullOrEmpty(index.destinationPath)) {
+        if (string.IsNullOrEmpty(index.DestinationPath)) {
             Debug.LogError("No import destination path specified.");
             return false;
         }
 
-        if (!Directory.Exists($"{Application.dataPath}/{index.destinationPath}")) {
+        if (!Directory.Exists($"{Application.dataPath}/{index.DestinationPath}")) {
             Debug.LogError("The specified import destination path does not exist.");
             return false;
         }
 
         if (!readingSource) return true;
 
-         if (string.IsNullOrEmpty(index.sourcePath)) {
+         if (string.IsNullOrEmpty(index.SourcePath)) {
             Debug.LogError("No import source path specified.");
             return false;
         }
 
-        if (!Directory.Exists(index.sourcePath)) {
+        if (!Directory.Exists(index.SourcePath)) {
             Debug.LogError("The specified import source path does not exist.");
             return false;
         }
@@ -166,7 +172,7 @@ public class GamesIndexEditor : Editor {
     List<EditorBuildSettingsScene> EraseOldVersions(GamesIndex index) {    
         _importInfo = "erase";
 
-        string destPath = $"{Application.dataPath}/{index.destinationPath}";
+        string destPath = $"{Application.dataPath}/{index.DestinationPath}";
         Debug.Log($"Clearing old versions from {destPath}");
 
         var toKeep = new List<EditorBuildSettingsScene>

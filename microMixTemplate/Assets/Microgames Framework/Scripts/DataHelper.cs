@@ -8,12 +8,58 @@ using UnityEditor;
 
 public static class DataHelper
 {
+
+    public enum DigitalDirection : byte {
+        None,
+        Right,
+        UpRight,
+        Up,
+        UpLeft,
+        Left,
+        DownLeft,
+        Down,
+        DownRight
+    }
+
+    private static DigitalDirection[] DIRECTION_DECODE = new[]{
+        DigitalDirection.DownLeft,
+        DigitalDirection.Down,
+        DigitalDirection.DownRight,
+        DigitalDirection.Left,
+        DigitalDirection.None,
+        DigitalDirection.Right,
+        DigitalDirection.UpLeft,
+        DigitalDirection.Up,
+        DigitalDirection.UpRight
+    };
+
+    public static DigitalDirection Get8Way(this Vector2 v) {
+        int x = System.Math.Sign(v.x);
+        int y = System.Math.Sign(v.y);
+        int code = 4 + x + 3 * y;
+        return DIRECTION_DECODE[code];
+    }
+
+    /// <summary>
+    /// Number of 45-degree hops between this direction and the one passed as a parameter.
+    /// </summary>
+    /// <param name="from">The start direction.</param>
+    /// <param name="to">The end direction</param>
+    /// <returns>An integer from -3 (3 hops clockwise) to +4 (4 hops counter-clockwise). Returns zero if either direction was None.</returns>
+    public static int GetRotationTo(this DigitalDirection from, DigitalDirection to) {
+        if (from == DigitalDirection.None || to == DigitalDirection.None) return 0;
+        int difference = (int)to - (int)from;
+        if (difference > 4) difference -=8;
+        else if (difference <= -4) difference += 8;
+        return difference;
+    }
+
     public static int NumberOfTrailingZeros(this int i)
     {
         return TRAILING_ZERO_LOOKUP[(i & -i) % 37];
     }
 
-    private static System.ReadOnlySpan<byte> TRAILING_ZERO_LOOKUP => new byte[37]{
+    private static byte[] TRAILING_ZERO_LOOKUP = new byte[]{
         32, 0, 1, 26, 2, 23, 27, 0, 3, 16, 24, 30, 28, 11, 0, 13, 4, 7, 17,
         0, 25, 22, 31, 15, 29, 10, 12, 6, 0, 21, 14, 9, 5, 20, 8, 19, 18
     };

@@ -94,7 +94,7 @@ public class SpinnerWidget : MonoBehaviour {
     }
 
     float Slowdown(float t) {
-        return 1f - t * t;
+        return 1f - t * t * t;
     }
 
     public IEnumerator FadeOut(float duration) {

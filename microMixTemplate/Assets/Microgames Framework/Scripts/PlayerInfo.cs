@@ -15,9 +15,9 @@ public class PlayerInfo
     public PlayerStatus status { get; set; }
 
     public bool isReady { get; set; }
-    float _lastReadyTime;
+    double _lastReadyTime;
 
-    public float SecondsSinceInput => Time.time - _lastReadyTime;
+    public float SecondsSinceInput => (float)(Time.timeAsDouble - _lastReadyTime);
 
     public PlayerInfo(PlayerID playerID) {
         this.playerID = playerID;
@@ -27,7 +27,7 @@ public class PlayerInfo
 
     public void Ready() {
         isReady = true;
-        _lastReadyTime = Time.time;
+        _lastReadyTime = Time.timeAsDouble;
     }
 
     public void Unready() {

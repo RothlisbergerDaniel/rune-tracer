@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Use this for a game manager script that needs to respond to game start / time running out,
+/// but does not manage player control input.
+/// </summary>
 public abstract class MicrogameEvents : MonoBehaviour
 {
     protected virtual void OnEnable() {

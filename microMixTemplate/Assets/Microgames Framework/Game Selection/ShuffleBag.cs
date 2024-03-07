@@ -23,6 +23,8 @@ public class ShuffleBag<T> {
         items.CopyTo(_items, 0);
     }
 
+    public int Count => _items.Length;
+
     /// <summary>
     /// Draw a random item from the bag, re-shuffling if needed.
     /// This uses a Fisher-Yates shuffle, constant time per draw.

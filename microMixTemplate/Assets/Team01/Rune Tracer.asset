@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Rune Tracer
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 1
   gameTitle: Rune Tracer
   gameIcon: {fileID: 0}
-  prompt: Trace
+  announcerText: Trace
+  announcerAudioFile: Trace-RX10MDc_333-01
+  _announcerAudio: {fileID: 8300000, guid: db0ffe6eb8356354fb147e6e5a3cecc9, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: 5ca1559dd938e084a86933d71c7224f0, type: 3}
   twoPlayerScene: {fileID: 0}
   controls:
