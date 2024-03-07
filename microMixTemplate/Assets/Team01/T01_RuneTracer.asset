@@ -15,7 +15,7 @@ MonoBehaviour:
   includeInRandomizer: 1
   teamNumber: 1
   gameTitle: Rune Tracer
-  gameIcon: {fileID: 0}
+  gameIcon: {fileID: 21300000, guid: 23c0c30bb4d8a114c92f2da84caa8900, type: 3}
   announcerText: Trace
   announcerAudioFile: Trace-RX10MDc_333-01
   _announcerAudio: {fileID: 8300000, guid: db0ffe6eb8356354fb147e6e5a3cecc9, type: 3}
@@ -26,14 +26,10 @@ MonoBehaviour:
     primary: 124
     joiner: 0
     secondary: 0
-  - label: Recenter
-    primary: 4
-    joiner: 0
-    secondary: 0
   rightPlayerAltControls: []
   singlePlayerScenePath: Assets/Team01/Scenes/Rune Trace 1P.unity
   twoPlayerScenePath: 
   postgameMessages: []
-  bannerImage: {fileID: 0}
+  bannerImage: {fileID: 21300000, guid: 3831ab72fbf2a514bb6c5cf072a56647, type: 3}
   developerCredits: []
   licensedWorksCredits: []
