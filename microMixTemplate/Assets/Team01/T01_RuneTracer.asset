@@ -29,7 +29,23 @@ MonoBehaviour:
   rightPlayerAltControls: []
   singlePlayerScenePath: Assets/Team01/Scenes/Rune Trace 1P.unity
   twoPlayerScenePath: 
-  postgameMessages: []
+  postgameMessages:
+  - That rocked
+  - That's a heavy stone
+  - Mystical
+  - Ancient Norse Emojis
+  - And I thought my hand writing was bad
+  - Steady hands
+  - Do you evenknow what you're spelling
   bannerImage: {fileID: 21300000, guid: 3831ab72fbf2a514bb6c5cf072a56647, type: 3}
-  developerCredits: []
+  developerCredits:
+  - 'Level design/Video edit - Hoseung Kwack '
+  - Narrative Designer - David Lopez
+  - Particles & VFX - Adam Garzon
+  - "Programming - Daniel R\xF6thlisberger"
+  - Project Manager / Art - Jayden Galita
+  - 'Sound Design - Anis Halloway '
+  - Sound Design - Claudia Rando
+  - Sound Design - Jack Caunter
+  - Sound Design - Kathleen Hutten
   licensedWorksCredits: []
