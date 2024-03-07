@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3982769109886976476}
   - component: {fileID: 4400662150528200852}
-  - component: {fileID: 1799668811705757533}
+  - component: {fileID: 905252219344158420}
   m_Layer: 0
   m_Name: Lineup
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1799668811705757533
+--- !u!114 &905252219344158420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4936824169111960946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade549cc994e57149be69b3a023630a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 4af0e41f74e89a243b94ec08b62f6973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getInputFrom: 0
   runeSprites:
   - {fileID: 21300000, guid: 4c07daffcd34d694aa37e6b8beb5e5f1, type: 3}
   - {fileID: 21300000, guid: e073a873f22d0064586b744a3df862b6, type: 3}

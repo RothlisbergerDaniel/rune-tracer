@@ -18,7 +18,7 @@ MonoBehaviour:
   quickTestPlayers: 1
   _avoidRepeatsWithin: 5
   _singlePlayer:
-  - {fileID: 11400000, guid: 254a656e0ce6eb64281f3127670e1bbe, type: 2}
+  - {fileID: 11400000, guid: 0e9b8ddb347aa1045aa371c8518b2347, type: 2}
   _twoPlayer:
   - {fileID: 11400000, guid: e5bc55ddfb0a7024d9bf73089a48e580, type: 2}
   - {fileID: 11400000, guid: 254a656e0ce6eb64281f3127670e1bbe, type: 2}

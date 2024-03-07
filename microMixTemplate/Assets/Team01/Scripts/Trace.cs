@@ -1,3 +1,4 @@
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,6 +20,7 @@ namespace team01
         public int runeID = 0; //public for testing purposes
         public GameObject linkedRune; //rune linked to this copy of the game controller
         public GameObject lineupRune; //links to the lineup rune prefab
+        public GameObject lineupController; //links to the lineup controller
 
         Vector2 direction; //current user direction input
         Vector2 target; //target direction input
@@ -28,14 +30,16 @@ namespace team01
         public int[] runeTypes; //list of rune types
         public int maxCount; //max number of runes to complete
         public int currentRune; //current rune in sequence
+        bool gameCompleted; //checks whether the game is completed or not
         
         // Start is called before the first frame update
         void Start()
         {
             //getStepPosition(runeID);
-            runeTypes = new int[10];
-            getLineup();
-            getNewRune(runeTypes[currentRune], true); //replace this with hiding cursor on Start, then show cursor OnGameStart
+            runeTypes = new int[10]; //refresh rune type list
+            getLineup(); //get new rune lineup
+            getNewRune(runeTypes[currentRune], true); //replace this with hiding cursor on Start, then show cursor OnGameStart?
+            gameCompleted = false; //make sure the game can be completed
         }
         protected override void OnGameStart()
         {
@@ -65,8 +69,9 @@ namespace team01
                     {
                         getNewRune(runeTypes[currentRune], false); //gets the next rune in the sequence
                     }
-                    else
+                    else if (!gameCompleted)
                     {
+                        gameCompleted = true;
                         ReportGameCompletedEarly(); //end game if all runes are completed early
                     }
                 }
@@ -84,9 +89,11 @@ namespace team01
                 {
                     getNewRune(runeTypes[currentRune], false);
                 }
-                else
+                else if (!gameCompleted)
                 {
-                    ReportGameCompletedEarly();
+                    gameCompleted = true;       //prevent game from continually reporting early completion
+                    ReportGameCompletedEarly(); //then report early completion
+                    //put win feedback here
                 }
             }
         }
@@ -98,8 +105,6 @@ namespace team01
             {
                 stepPos += runeStepCounts[i];
             }
-
-            //return stepPos;
         }
 
         void getNewRune(int type, bool onFirstLoad)
@@ -117,7 +122,6 @@ namespace team01
             if(!onFirstLoad) //prevent errors by not updating on first load
             {
                 linkedRune.SendMessage("updateSprite", runeID);
-                linkedRune.GetComponent<Rune>().id = -1;
             }
         }
 
@@ -142,10 +146,11 @@ namespace team01
             for(int i = 0; i < maxCount; i++)
             {
                 GameObject currentRuneItem;
-                currentRuneItem = Instantiate(lineupRune, new Vector3(-2.25f + (i * 0.5f), -4.5f, 0f), Quaternion.identity); //instantiate runes at positions 0.5x apart from each other
-                currentRuneItem.GetComponent<Rune>().id = i;   //get the script and set id
-                currentRuneItem.GetComponent<Rune>().type = runeTypes[i]; //as well as rune type
-                currentRuneItem.GetComponent<Rune>().controller = gameObject;
+                currentRuneItem = Instantiate(lineupRune, transform); //instantiate runes at positions 0.5x apart from each other
+                currentRuneItem.GetComponent<Lineup>().id = i;   //get the script and set id
+                currentRuneItem.GetComponent<Lineup>().type = runeTypes[i]; //as well as rune type
+                currentRuneItem.GetComponent<SpriteRenderer>().sprite = currentRuneItem.GetComponent<Lineup>().runeSprites[runeTypes[i]]; //holy crap I hate this I hate this I hate this
+                currentRuneItem.GetComponent<Lineup>().controller = gameObject;
                 //currentRuneItem.SendMessage("updateSprite", i, SendMessageOptions.DontRequireReceiver); //uncomment this to throw an error :skull:
             }
             currentRune = 0; //reset current rune
