@@ -32,7 +32,13 @@ namespace team01
         public int currentRune; //current rune in sequence
         bool gameCompleted; //checks whether the game is completed or not
 
-        TrailRenderer tr;
+        TrailRenderer tr; //TrailRenderer for tracing out rune shapes
+
+        public AudioSource[] strokes; //stroke sounds for tracing
+        public AudioSource lose; //loss
+        public AudioSource win;  //and win sfx
+        public AudioSource runeComplete; //rune completion sfx
+        public AudioSource bgm; //background music
         
         // Start is called before the first frame update
         void Start()
@@ -48,6 +54,7 @@ namespace team01
         {
             //base.OnGameStart();
             getNewRune(runeTypes[currentRune], false);
+            bgm.Play();
         }
 
 
@@ -65,6 +72,7 @@ namespace team01
                     //stepPos = Mathf.Clamp(stepPos, 0, runePoints.Length); //clamp so it doesn't go out-of-bounds
                     stepCount++; //update actual and virtual step position
                     target = runeStepInputs[stepPos]; //get new target input
+                    strokes[Random.Range(0, 3)].Play(); //plays a random stroke sound
                 } 
                 else
                 {
@@ -72,11 +80,13 @@ namespace team01
                     if (currentRune < maxCount)
                     {
                         getNewRune(runeTypes[currentRune], false); //gets the next rune in the sequence
+                        runeComplete.Play();
                     }
                     else if (!gameCompleted)
                     {
                         gameCompleted = true;
                         ReportGameCompletedEarly(); //end game if all runes are completed early
+                        win.Play();
                     }
                 }
                 
@@ -92,11 +102,13 @@ namespace team01
                 if (currentRune < maxCount)
                 {
                     getNewRune(runeTypes[currentRune], false);
+                    runeComplete.Play();
                 }
                 else if (!gameCompleted)
                 {
                     gameCompleted = true;       //prevent game from continually reporting early completion
                     ReportGameCompletedEarly(); //then report early completion
+                    win.Play();
                     //put win feedback here
                 }
             }
@@ -159,6 +171,12 @@ namespace team01
                 //currentRuneItem.SendMessage("updateSprite", i, SendMessageOptions.DontRequireReceiver); //uncomment this to throw an error :skull:
             }
             currentRune = 0; //reset current rune
+        }
+
+        protected override void OnTimesUp()
+        {
+            base.OnTimesUp();
+            lose.Play();
         }
     }
 }    
