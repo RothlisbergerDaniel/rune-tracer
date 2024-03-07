@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d24fbde2c24ab1544bd81b52842e8ec5, type: 3}
-  m_Name: Rune Tracer
+  m_Name: T01_Rune Tracer
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 1
   gameTitle: Rune Tracer
-  gameIcon: {fileID: 0}
+  gameIcon: {fileID: 21300000, guid: 57246b900ffbc194a8f7f95d52483122, type: 3}
   announcerText: Trace
   announcerAudioFile: Trace-RX10MDc_333-01
   _announcerAudio: {fileID: 8300000, guid: db0ffe6eb8356354fb147e6e5a3cecc9, type: 3}
@@ -34,6 +34,7 @@ MonoBehaviour:
   singlePlayerScenePath: Assets/Team01/Scenes/Rune Trace 1P.unity
   twoPlayerScenePath: 
   postgameMessages: []
-  bannerImage: {fileID: 0}
-  developerCredits: []
+  bannerImage: {fileID: 21300000, guid: 67cd84c25a4482e4d959a45e667a9d12, type: 3}
+  developerCredits:
+  - 
   licensedWorksCredits: []
